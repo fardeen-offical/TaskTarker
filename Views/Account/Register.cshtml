@@ -1,0 +1,49 @@
+﻿@model TaskTracker.Models.UserModel
+
+@{
+    ViewBag.Title = "Create Account";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card shadow-lg border-0 rounded-lg">
+                <div class="card-header bg-success text-white text-center py-4">
+                    <i class="fas fa-user-plus fa-3x mb-2"></i>
+                    <h3 class="font-weight-bold">Join Task Harmony</h3>
+                    <p class="mb-0 small">Create a new account for free</p>
+                </div>
+                <div class="card-body p-5">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-group mb-4">
+                            <label class="small mb-1 font-weight-bold">Choose Username</label>
+                            @Html.TextBoxFor(m => m.Username, new { @class = "form-control border-0 bg-light", placeholder = "e.g. fardeen_ali", required = "required" })
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label class="small mb-1 font-weight-bold">Set Password</label>
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control border-0 bg-light", placeholder = "Choose a strong password", required = "required" })
+                        </div>
+
+                        if (ViewBag.Error != null)
+                        {
+                            <div class="alert alert-warning border-0 small py-2">
+                                <i class="fas fa-exclamation-circle me-2"></i> @ViewBag.Error
+                            </div>
+                        }
+
+                        <button type="submit" class="btn btn-success w-100 py-2 shadow-sm mt-2">
+                            Create Account <i class="fas fa-check-circle ms-2"></i>
+                        </button>
+                    }
+                </div>
+                <div class="card-footer text-center py-3 bg-light border-0">
+                    <div class="small">Pehle se account hai? <a href="@Url.Action("Login")" class="text-success font-weight-bold">Login Karein</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

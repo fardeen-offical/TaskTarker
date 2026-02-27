@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+}
+
+<div class="jumbotron bg-white shadow-sm border-0 rounded-lg p-5 mb-4">
+    <div class="row align-items-center">
+        <div class="col-md-8">
+            <h1 class="display-4 font-weight-bold text-primary">Welcome to Task Harmony! 🚀</h1>
+            <p class="lead text-muted">Apne roz-marra ke kaamon ko organize karein aur apni productivity barhayein.</p>
+            <hr class="my-4">
+            <p>Aaj hi naye tasks add karein aur unhein track karein.</p>
+            <a class="btn btn-primary btn-lg shadow" href="@Url.Action("Index", "Task")" role="button">
+                <i class="fas fa-list-check me-2"></i> Mere Tasks Dekhein
+            </a>
+            <a class="btn btn-outline-success btn-lg shadow-sm ms-2" href="@Url.Action("Create", "Task")" role="button">
+                <i class="fas fa-plus-circle me-2"></i> Naya Task Banayein
+            </a>
+        </div>
+        <div class="col-md-4 text-center d-none d-md-block">
+            <i class="fas fa-tasks fa-10x text-light opacity-50"></i>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm mb-4 text-center p-3">
+            <div class="card-body">
+                <i class="fas fa-clipboard-list fa-3x text-info mb-3"></i>
+                <h4 class="card-title">Easy Management</h4>
+                <p class="card-text text-muted">Tasks ko edit, update aur delete karna ab nihayat asaan hai.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm mb-4 text-center p-3">
+            <div class="card-body">
+                <i class="fas fa-database fa-3x text-warning mb-3"></i>
+                <h4 class="card-title">Secure Storage</h4>
+                <p class="card-text text-muted">Aapka data SQL Server Database mein permanent save hota hai.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-0 shadow-sm mb-4 text-center p-3">
+            <div class="card-body">
+                <i class="fas fa-mobile-alt fa-3x text-success mb-3"></i>
+                <h4 class="card-title">Fully Responsive</h4>
+                <p class="card-text text-muted">Ye application mobile, tablet aur desktop sab par fit dikhti hai.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="alert alert-info border-0 shadow-sm mt-4">
+    <strong>💡 Pro Tip:</strong> Har task ki <strong>Due Date</strong> lazmi set karein taake aap waqt par kaam mukammal kar sakein!
+</div>
